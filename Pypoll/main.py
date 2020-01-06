@@ -1,20 +1,19 @@
 import os
 import csv
 
-# path to data file
-budget_data_csv = os.path.join('election_data.csv')
+csvpath = Pypollcsv = os.path.join('c:/Users/rtmcl/Documents/GitHub/python-challenge/Pypoll','Resources','election_data.csv')
 
 #variables
 total_votes = 0
 candidates_unique = []
 candidate_vote_count = []
 
-with open(budget_data_csv, newline="") as csvfile:
+with open(election_data.csv, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvreader)
 
     for row in csvreader:
-        #This is the total votes cast, just count rows
+        #Total votes cast
         total_votes += 1
         #read in the candidate from column 3 of csv
         candidate_in = (row[2])
