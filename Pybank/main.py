@@ -1,36 +1,38 @@
 import os
 import csv
 
+# Set path for file
+csvpath = PyBankcsv = os.path.join('c:/Users/rtmcl/Documents/GitHub/python-challenge/Pybank','Resources','budget_data.csv')
 
-PyBankcsv = os.path.join('c:/Users/rtmcl/Documents/GitHub/python-challenge/Pybank','Resources','budget_data.csv')
+#print(csvpath)
 
-
-
-#Create Lists
-profit = []
-monthly_changes = []
-date = []
-
-#Variables
-count = 0
-total_profit = 0
-total_change_profits = 0
-initial_profit = 0
-
-with open(PyBankcsv, newline="") as csvfile:
+# Open and read the CSV
+with open(csvpath, newline="") as csvfile:
+    #print(csvreader)
+    
+    # Read header row, print it, set it aside
     csvreader = csv.reader(csvfile, delimiter=",")
-    csv_header = next(csvreader)
-
-      
+    csv_header = next(csvfile)
+    #print(f"Header: {csv_header}")
+ 
+    # Declare variables as empty lists
+    Months = []
+    Profit_Loss = []
+    Differences = []
+    Greatest_Increase_Date = ""
+    Greatest_Decrease_Date = ""
+    
+    # Count total number of months the data encapsulates
     for row in csvreader:
-        print(row)
-            # Conducting the ask
-    for row in csvreader:    
-      # Use count to count the number months in this dataset
-      count = count + 1 
+        Months.append(row[0])   
+        Profit_Loss.append(int(row[1]))
+      
+    
+    # Print Statements
+    print("Financial Analysis")
+    print("-------------------------------")
+    print("Total Months: ", len(Months))
+    print("Net Total: $", sum(Profit_Loss))
 
-      # Will need it when collecting the greatest increase and decrease in profits
-      date.append(row[0])
 
-
-
+ 
