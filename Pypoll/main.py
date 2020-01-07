@@ -7,12 +7,12 @@ csvpath = Pypollcsv = os.path.join('c:/Users/rtmcl/Documents/GitHub/python-chall
 with open(csvpath, newline="") as csvfile:
     #print(csvreader)
     
-    # Read header row, print it, set it aside
+    # Read header row
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvfile)
-    #print(f"Header: {csv_header}")
+    
  
-    #Declare variables as empty dictionaries and lists
+    #Declare variables
     Candidates = {}
     Count = 0
     Votes_Cast = 0
@@ -31,7 +31,7 @@ with open(csvpath, newline="") as csvfile:
             Candidates[candidate] += 1
         else:
             Candidates[candidate] = 1
-        #print(Candidates)
+       
     
     
     # Print Statements
@@ -41,11 +41,11 @@ with open(csvpath, newline="") as csvfile:
     print("-------------------------------")
     
             
-    #total number of votes for each candidate
+    #total number of votes
     for candidate in Candidates:
         Votes_Cast += Candidates[candidate]
     
-        # percent of votes for each candidate
+        # percent of votes
         percent_of_votes = (Candidates[candidate])/(Count) * 100
         print(f"{candidate}: {int(percent_of_votes)}% {Votes_Cast}")
         

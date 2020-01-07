@@ -4,7 +4,6 @@ import csv
 # Set path for file
 csvpath = PyBankcsv = os.path.join('c:/Users/rtmcl/Documents/GitHub/python-challenge/Pybank','Resources','budget_data.csv')
 
-#print(csvpath)
 
 # Open and read the CSV
 with open(csvpath, newline="") as csvfile:
@@ -42,12 +41,12 @@ with open(csvpath, newline="") as csvfile:
         # Find average of values
         Average_Change = sum(Differences) / len(Differences)
         
-        # Determine greatest increase and date
+        # Greatest increase and date
         Greatest_Increase = max(Differences)
         Greatest_Increase_Date = str(Months[Differences.index(max(Differences))])
         
         
-        # Determine greatest decrease and date
+        # Greatest decrease and date
         Greatest_Decrease = min(Differences)
         Greatest_Decrease_Date = str(Months[Differences.index(min(Differences))])
         
